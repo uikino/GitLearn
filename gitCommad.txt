@@ -53,4 +53,27 @@ The first :
 	添加远程仓库
 	git remote add <你的远程仓库名> git@github.com:<你的github名字>/<你的远程仓库名>.git
 
+	克隆远程仓库
+	
+	git clone < https:link | git@github.com:username/Repository.git >
+	
+分支管理
+	git checkout -b <分支名>  
+	-b表示创建分支并且切换到新分支
+	
+	等价于{
+		git branch		<分支名>
+		git checkout	<分支名>
+	}
+	两条命令
 
+	git branch 
+	可以查看当前分支
+
+	git merge < 分支名 >
+	将< 分支名 > 合并到 当前 分支
+
+	git branch -d < 分支名 >
+	删除 < 分支名 > 
+
+				
