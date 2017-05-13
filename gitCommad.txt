@@ -1,0 +1,56 @@
+The first :	
+	git init //创建版本库 Repository
+	//文件
+	git add your_file
+	//添加文件 并存入暂存区
+	git commit -m "提交说明"
+	//git commit 是提交命令 -m选项可选，作用是说明
+	git status //命令结果是显示版本库状态
+		位于分支 master
+		未跟踪的文件:
+			（使用 "git add <文件>..." 以包含要提交的内容）
+
+			gitCommad.txt
+
+		提交为空，但是存在尚未跟踪的文件（使用 "git add" 建立跟踪）
+	
+		git diff < file | hashcode >
+		//列出 timeline reconrd 
+
+
+	git log							//列出从最近到最远的提交日志
+	git log --pretty=online			//精简日志的显示
+	git reset --hard < HEAD^ >		//还原到 HEAD^ or HEAD^^ or HEAD-versionNumber
+	//当你还原到之前的版本后悔后还可以再退回最新的版本 你需要 HEAD 号
+	git reflog
+	//列出HEAD 修改日志
+
+
+	//如果你修改文件后git add 再次修改这个文件后 git commit 
+	//会提交第一次修改，详情：第一次修改提交到暂存区而第二次没有 
+
+	git checkout -- file
+	//丢弃工作区file文件的修改
+	//如果缺少 -- 就是切换分支
+	git reset < HEAD or other > file
+	//git reset 不仅可以回退版本 也可以将暂存区的修改回退到工作区
+
+	git rm file
+	//git rm file 可以删除Repository版本库里的文件
+	//当git rm file 后可以 git commit 提交这次删除
+	//当你在工作区删除后 有两种选择 
+	//git rm file 确实要从版本库里删除它
+	//git checkout -- file 误删了，从版本库里恢复它
+
+
+添加远程仓库
+	ssh-keygen -t rsa -C "youremail@example.com"
+	然后生成两个文件 你命名的文件 xxx xxx.pub
+	xxx是私钥 xxx.pub是公钥
+	然后在 github 的 Account Setting 里的 SSH Keys and GPG 里
+	add ssh keys 
+
+	添加远程仓库
+	git remote add <你的远程仓库名> git@github.com:<你的github名字>/<你的远程仓库名>.git
+
+
