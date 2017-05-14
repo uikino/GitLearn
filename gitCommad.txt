@@ -76,4 +76,12 @@ The first :
 	git branch -d < 分支名 >
 	删除 < 分支名 > 
 
-				
+分支冲突
+	当你有两个分支并且两个分支已经修改但是并未提交并且是同一文件的修改
+	在你commit 时 两个分支会发生冲突
+	git log --graph --pretty=oneline --abbrev-commit 命令可以查看分支合并情况
+
+分支管理策略
+	当合并分支时 git 可能会使用 Fast forward 模式，在这种情况下，删除分支后会丢失分支信息
+
+	
